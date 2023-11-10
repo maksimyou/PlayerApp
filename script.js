@@ -104,12 +104,27 @@ class App {
         this.title.textContent = 'Мини плеер'
         this.soundTrackText.textContent = this.autors[0].name
         this.timerCurent.textContent = '0:00'
-        setTimeout(() => {
+
+
+        this.soundd.addEventListener("loadedmetadata", () => {
             this.timerAll.textContent = this.generMinutesSecund(this.soundd.duration);
-        }, 100);
+        });
         this.scrollValue.type = 'range'
         this.scrollValue.addEventListener('input', (e) => {
+            this.soundd.muted = false
             this.soundd.volume = (e.target.value * 0.01)
+        })
+
+        this.valueIcon.addEventListener('click', () => {
+            if (this.soundd.muted) {
+                this.soundd.muted = false
+                this.valueIcon.src = './assets/img/volume-1.png'
+            } else {
+                this.valueIcon.src = './assets/img/volume-off.png'
+                this.soundd.muted = true
+            }
+
+            console.log(this.soundd.muted)
         })
         this.valueIcon.src = './assets/img/volume-1.png'
         this.valuePanel.append(this.valueIcon, this.scrollValue)
@@ -202,12 +217,14 @@ class App {
         }
         this.soundImage.style.backgroundImage = `url(${this.autors[this.currentSound].img})`
         this.mainContainer.style.backgroundImage = `url(${this.autors[this.currentSound].img})`
-        this.audioAddSounds(this.autors[this.currentSound].sound)
+        this.soundTrackText.textContent = this.autors[this.currentSound].name
 
-        setTimeout(() => {
+        this.audioAddSounds(this.autors[this.currentSound].sound)
+        this.scrollTimer.value = 0
+        this.soundd.addEventListener("loadedmetadata", () => {
             this.timerAll.textContent = this.generMinutesSecund(this.soundd.duration);
             this.scrollTimer.value = 0
-        }, 100);
+        });
     }
 
 }
