@@ -1,0 +1,287 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+body{
+max-width: 100vw;
+margin: 0 auto;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.header{
+    background: black;
+}
+.header-container{ 
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.main{
+    height: 100%;
+    position: relative;
+}
+
+
+.main-container{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('./assets/img/1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    transition: .3s;
+}
+.main-blur{
+    backdrop-filter: blur(5px);
+    transform: scale(1.02);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.player-panel{
+    width: 375px;
+    height: 750px;
+    background: #091227;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    filter: blur(0px);
+    border-radius: 5px;
+}
+
+.sound-image{
+    width: 261px;
+    height: 261px;
+    border:1px solid #98a3bb;
+    margin-bottom: 28px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+
+.sound-track-text{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #eaf0ff;
+    margin-bottom: 116px;
+}
+
+.timer-all-curent{
+    width: 314px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    text-align: right;
+    color: rgba(165, 192, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.scroll-timer{
+    width: 317px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+.value-panel{
+    align-self: flex-start;
+    margin-left: 35px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    width: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.value-panel:hover{
+    width: 165px;
+    transition: 0.3s;
+}
+
+
+.value-icon{
+
+margin-right: 5px;
+}
+.scroll-value{
+
+
+}
+.footer{
+    background: rgb(220, 164, 164);
+
+}
+
+.footer-container{
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.logo{
+    width: 64px;
+}
+
+
+.github{
+    color: white;
+    font-size: 16px;
+}
+
+.githubImg{
+    width: 64px;
+}
+
+.title{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:26px;
+    cursor: pointer;
+}
+
+.panel-navigation{
+    display: flex;
+    align-items: center;
+    gap: 37.6px;
+    margin-top: 30px;
+}
+
+.navigation-prev{
+    background-image: url('./assets/img/prev.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 33px;
+    cursor: pointer;
+}
+
+.navigation-play-pause{
+    background-image: url('./assets/img/play.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 39px;
+    height: 42px;
+    cursor: pointer;
+}
+
+
+.navigation-next{
+    background-image: url('./assets/img/next.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 33px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 4px;
+    margin: 0 -1px;
+    background-color: rgba(62, 57, 57, 0.31);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    width:16px;
+    height: 18px;
+    -webkit-appearance: none;
+    margin-top: -6px;
+  }
+
+  input[type=range]::-moz-range-track {
+    border-radius: 10px;
+    border: 1px solid black;
+      height: 4px;
+      background-color:  rgba(78, 205, 15, 0.31);
+  }
+ input[type=range]::-moz-range-thumb {
+      background:  rgba(20, 207, 98, 0.31);
+      border-radius: 10px;
+      border: 1px solid black;
+      cursor: pointer;
+  }
+
+
